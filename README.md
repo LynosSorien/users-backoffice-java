@@ -9,8 +9,8 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-The package is necessary to compile and generate the required code by mappers ((http://mapstruct.org/)[mapstructs] library).
-The application also use (https://projectlombok.org/)[Project Lombok] to generate repetitive code (as Getters and Setters, Constructors, Builders, ...).
+The package is necessary to compile and generate the required code by mappers ([mapstructs](http://mapstruct.org/) library).
+The application also use [Project-Lombok](https://projectlombok.org/) to generate repetitive code (as Getters and Setters, Constructors, Builders, ...).
 
 ## How to use
 
