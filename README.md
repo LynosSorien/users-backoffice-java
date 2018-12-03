@@ -11,11 +11,12 @@ mvn spring-boot:run
 
 The package is necessary to compile and generate the required code by mappers (mapstructs library).
 
-## How to use
+## How to use
+
 The project has a default user with credentials admin:test
 Usefull endpoints are:
-http://localhost:8080/
-http://localhost:8080/swagger-ui.html
+ * http://localhost:8080/
+ * http://localhost:8080/swagger-ui.html
 
 ## About
 The application uses an in-memory MongoDB so, no mongodb is required to be configured.
