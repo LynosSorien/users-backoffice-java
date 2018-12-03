@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+       xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+       layout:decorator="unauthorized-layout">
+    <head>
+        <title>Backoffice - Log In</title>
+    </head>
+    <body>
+	    <div layout:fragment="content"
+	        class="row">
+	        <div th:if="${param.error}" class="alert alert-warning">
+	            Invalid username and password.
+	        </div>
+	        <div th:if="${param.logout}" class="alert alert-success">
+	            You have been logged out.
+	        </div>
+
+	     	<div class="jumbotron">
+	     	<form th:action="@{/login}" method="post">
+	     		<p>Please insert username and password</p>
+	            <div><label> User Name : </label><input type="text" name="username" class="form-control"/> </div>
+	            <div><label> Password: </label><input type="password" name="password" class="form-control"/> </div>
+	            <div>&nbsp;</div>
+	            <div><input class="form-control" type="submit" value="Sign In"/></div>
+	        </form>
+	     	</div>
+	      </div>
+	</body>
+</html>

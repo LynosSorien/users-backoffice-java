@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+ 	<head>
+		<meta charset="utf-8" />
+    		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    		<meta name="viewport" content="width=device-width, initial-scale=1" />
+    		<title>Backoffice</title>
+		<link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" />
+		<link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap-theme.min.css}" />
+		<script th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+		<script th:src="@{/webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+	</head>
+	<body>
+		<div class="container" style="padding-top:50px">
+			<div id="serverMessageBus" class="alert alert-success" th:if="${globalMessage}">
+	          <span class="glyphicon glyphicon-info-sign"></span> <span th:text="${globalMessage}"></span>
+	        </div>
+	         
+	        <div id="serverErrorBus" class="alert alert-error" th:if="${globalError}">
+	          <span class="glyphicon glyphicon-error-sign"></span> <span th:text="${globalError}"></span>
+	        </div>
+	
+			<h1>Backoffice</h1>
+			<div layout:fragment="content">
+	
+	   		</div>
+		</div>
+	</body>
+</html>

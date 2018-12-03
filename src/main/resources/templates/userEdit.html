@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+       xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+       layout:decorator="layout">
+    <head>
+        <title>Backoffice</title>
+    </head>
+    <body>
+	    <div layout:fragment="content"
+	        class="row">
+	        <h1>[[${userToEdit['username']}]] edit</h1>
+			<div class="container">
+				<div class="row">
+					<input id="username" class="entity-value" th:value="${userToEdit['username']}" style="display: none" disabled/>
+					<div class="col-md-3">
+						<label for="title">Title</label>
+						<input id="title" type="text" class="entity-value form-control" th:value="${userToEdit['title']}"/>
+					</div>
+					<div class="col-md-3">
+						<label for="firstName">First name</label>
+						<input id="firstName" type="text" class="entity-value form-control" th:value="${userToEdit['firstName']}"/>
+					</div>
+					<div class="col-md-3">
+						<label for="lastName">Last name</label>
+						<input id="lastName" type="text" class="entity-value form-control" th:value="${userToEdit['lastName']}"/>
+					</div>
+					<div class="col-md-3">
+						<label for="gender">Gender</label>
+						<input id="gender" type="text" th:value="${userToEdit['gender']}" class="entity-value form-control"/>
+					</div>
+					<div class="col-md-4">
+						<label for="email">E-mail</label>
+						<input id="email" type="text" class="entity-value form-control" th:value="${userToEdit['email']}"/>
+					</div>
+					<div class="col-md-4">
+						<label for="phone">Phone number</label>
+						<input id="phone" type="text" class="entity-value form-control" th:value="${userToEdit['phone']}"/>
+					</div>
+					<div class="col-md-4">
+						<label for="cell">Mobilephone</label>
+						<input id="cell" type="text" class="entity-value form-control" th:value="${userToEdit['cell']}"/>
+					</div>
+					<div class="col-md-3">
+						<label for="street">Street</label>
+						<input id="street" type="text" class="entity-value form-control" th:value="${userToEdit['street']}"/>
+					</div>
+					<div class="col-md-3">
+						<label for="city">City</label>
+						<input id="city" type="text" class="entity-value form-control" th:value="${userToEdit['city']}"/>
+					</div>
+					<div class="col-md-3">
+						<label for="state">State</label>
+						<input id="state" type="text" class="entity-value form-control" th:value="${userToEdit['state']}"/>
+					</div>
+					<div class="col-md-3">
+						<label for="postcode">Postcode</label>
+						<input id="postcode" type="text" class="entity-value form-control" th:value="${userToEdit['postcode']}"/>
+					</div>
+					<div class="col-md-12">
+						<label for="imageLargeUrl">Image large URL</label>
+						<input id="imageLargeUrl" type="text" class="entity-value form-control" th:value="${userToEdit['imageLargeUrl']}"/>
+					</div>
+					<div class="col-md-12">
+						<label for="imageMediumUrl">Image medium URL</label>
+						<input id="imageMediumUrl" type="text" class="entity-value form-control" th:value="${userToEdit['imageMediumUrl']}"/>
+					</div>
+					<div class="col-md-12">
+						<label for="imageThumbnailUrl">Thumbnail URL</label>
+						<input id="imageThumbnailUrl" type="text" class="entity-value form-control" th:value="${userToEdit['imageThumbnailUrl']}"/>
+					</div>
+					<div class="col-md-12">
+						<label for="password">New password</label>
+						<input id="password" type="text" class="entity-value form-control" th:value="${userToEdit['password']}"/>
+					</div>
+				</div>
+				<button class="btn btn-info user-edit-button">Edit</button>
+			</div>
+		</div>
+	</body>
+</html>

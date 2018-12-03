@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+       xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+       layout:decorator="layout">
+    <head>
+        <title>Backoffice - Log In</title>
+    </head>
+    <body>
+	    <div layout:fragment="content"
+	        class="row">
+	        <h2>Find users</h2>
+			<div class="multiple-magnifier" magnifier-type="list" all-needed="false" action="/api/users/by">
+				<div class="col-md-6">
+					<label for="username" >Username</label>
+					<input id="username" type="text" magnifier-key="username" class="form-control magnifier-key" />
+				</div>
+				<div class="col-md-6">
+					<label for="email">E-mail</label>
+					<input id="email" type="text" magnifier-key="email" class="form-control magnifier-key"/>
+				</div>
+
+				<div class="container">
+					<table class="table magnifier-target">
+						<thead>
+							<tr>
+								<th magnifier-target="username">Username</th>
+								<th magnifier-target="gender">Gender</th>
+								<th magnifier-target="fullname">Fullname</th>
+								<th magnifier-link="/view/user" magnifier-key="username" magnifier-type="info"/>
+								<th magnifier-link="/edit/user/page" magnifier-key="username" magnifier-type="edit"/>
+								<th magnifier-deleter="username" />
+							</tr>
+						</thead>
+                        <tbody>
+
+                        </tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

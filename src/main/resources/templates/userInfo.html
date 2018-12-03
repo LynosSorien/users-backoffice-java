@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+       xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+       layout:decorator="layout">
+    <head>
+        <title>Backoffice</title>
+    </head>
+    <body>
+	    <div layout:fragment="content"
+	        class="row">
+	        <h1>[[${userInfo['username']}]] information</h1>
+			<div class="container">
+				<div class="row">
+					<div th:if="${userInfo['picture'] != null && userInfo['picture']['medium'] != null}">
+						<img id="picture" th:src="${userInfo['picture']['medium']}"/>
+					</div>
+					<div class="col-md-4" th:if="${userInfo['name'] != null && userInfo['name'] != null}">
+						<label for="name">Name</label>
+						<input id="name" type="text" class="form-control" th:value="${userInfo['name']['title']+' '+userInfo['name']['first']+' '+userInfo['name']['last']}" disabled/>
+					</div>
+					<div th:if="${userInfo['gender'] != null}" class="col-md-4">
+						<label for="gender">Gender</label>
+						<input id="gender" type="text" th:value="${userInfo['gender']}" class="form-control" disabled/>
+					</div>
+					<div th:if="${userInfo['email'] != null}" class="col-md-4">
+						<label for="email">E-mail</label>
+						<input id="email" type="text" class="form-control" th:value="${userInfo['email']}" disabled/>
+					</div>
+					<div th:if="${userInfo['phone'] != null}" class="col-md-4">
+						<label for="phone">Phone number</label>
+						<input id="phone" type="text" class="form-control" th:value="${userInfo['phone']}" disabled/>
+					</div>
+					<div th:if="${userInfo['cell'] != null}" class="col-md-4">
+						<label for="cell">Mobilephone</label>
+						<input id="cell" type="text" class="form-control" th:value="${userInfo['cell']}" disabled/>
+					</div>
+					<div th:if="${userInfo['location'] != null && userInfo['location']['street'] != null}" class="col-md-4">
+						<label for="street">Street</label>
+						<input id="street" type="text" class="form-control" th:value="${userInfo['location']['street']}" disabled/>
+					</div>
+					<div th:if="${userInfo['location'] != null && userInfo['location']['city'] != null}" class="col-md-4">
+						<label for="city">City</label>
+						<input id="city" type="text" class="form-control" th:value="${userInfo['location']['city']}" disabled/>
+					</div>
+					<div th:if="${userInfo['location'] != null && userInfo['location']['state'] != null}" class="col-md-4">
+						<label for="state">State</label>
+						<input id="state" type="text" class="form-control" th:value="${userInfo['location']['state']}" disabled/>
+					</div>
+					<div th:if="${userInfo['location'] != null && userInfo['location']['postcode'] != null}" class="col-md-4">
+						<label for="postcode">Postcode</label>
+						<input id="postcode" type="text" class="form-control" th:value="${userInfo['location']['postcode']}" disabled/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

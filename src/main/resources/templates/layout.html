@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Backoffice</title>
+    <link
+      rel="stylesheet"
+      th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}"
+    />
+    <link
+      rel="stylesheet"
+      th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap-theme.min.css}"
+    />
+    <script th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+    <script th:src="@{/static/js/globalMessages.js}"></script>
+    <script th:src="@{/static/js/main.js}"></script>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-default navbar-fixed-top"
+      style="padding-bottom:0px"
+    >
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#navbar"
+            aria-expanded="false"
+            aria-controls="navbar"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span> <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Backoffice</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a th:href="@{/find/users}">Find users</a></li>
+            <li><a id="fill-users-link" href="#">Fill users</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a
+                href="#"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >User: <span>[[${user['username']}]]</span>
+                <span class="caret"></span
+              ></a>
+              <ul class="dropdown-menu">
+                <li><a th:href="@{/logout}">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- /.nav-collapse -->
+      </div>
+    </nav>
+    <div class="container" style="padding-top:55px">
+      <div id="global-messages">
+        <div
+          id="serverMessageBus"
+          class="alert alert-success alert-dismissible"
+          th:if="${globalMessage}"
+        >
+          <span class="glyphicon glyphicon-info-sign"></span>
+          <span th:text="${globalMessage}"></span>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div
+          id="serverErrorBus"
+          class="alert alert-danger alert-dismissible"
+          th:if="${globalError}"
+        >
+          <span class="glyphicon glyphicon-remove-sign"></span>
+          <span th:text="${globalError}"></span>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div
+          id="serverWarningBus"
+          class="alert alert-warning alert-dismissible"
+          th:if="${globalWarning}"
+        >
+          <span class="glyphicon glyphicon-alert"></span>
+          <span th:text="${globalWarning}"></span>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+
+      <h1>Backoffice</h1>
+      <div layout:fragment="content"></div>
+    </div>
+  </body>
+</html>
