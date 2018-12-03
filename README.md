@@ -1,7 +1,7 @@
 # users-backoffice-java
 Spring-boot java based application with bootstrap to manage users.
 
-## How to start:
+## How to start
 
 On the project's root, run:
 ```shell
@@ -9,7 +9,8 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-The package is necessary to compile and generate the required code by mappers (mapstructs library).
+The package is necessary to compile and generate the required code by mappers ((http://mapstruct.org/)[mapstructs] library).
+The application also use (https://projectlombok.org/)[Project Lombok] to generate repetitive code (as Getters and Setters, Constructors, Builders, ...).
 
 ## How to use
 
