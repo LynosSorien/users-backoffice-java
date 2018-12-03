@@ -4,10 +4,10 @@ Spring-boot java based application with bootstrap to manage users.
 ## How to start:
 
 On the project's root, run:
-'''
+"""
 mvn clean package
 mvn spring-boot:run
-'''
+"""
 
 The package is necessary to compile and generate the required code by mappers (mapstructs library).
 
